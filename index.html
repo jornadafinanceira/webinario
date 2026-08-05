@@ -30,30 +30,38 @@
     background: var(--bg);
     color: var(--text);
     font-family: 'Source Sans 3', sans-serif;
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   h1,h2,h3 { font-family: 'Outfit', sans-serif; font-weight: 500; line-height: 1.25; letter-spacing: -0.02em; }
   ::selection { background: var(--accent); color: #fff; }
+  .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
 
-  .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
-
-  /* ── Tag / eyebrow ── */
+  /* eyebrow */
   .eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
     font-family: 'Outfit', sans-serif;
-    font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--accent); margin-bottom: 28px;
   }
   .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
 
-  /* ── Hero ── */
-  .hero {
-    padding: 80px 0 64px;
-    position: relative; overflow: hidden;
+  /* section label */
+  .section-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px;
   }
+  .section-label::before { content: ''; width: 22px; height: 1px; background: var(--accent); }
+
+  /* divider */
+  .divider { height: 1px; background: var(--border); }
+
+  /* ── Hero ── */
+  .hero { padding: 80px 0 64px; position: relative; overflow: hidden; }
   .hero-bg-glow {
     position: absolute; top: -100px; right: -200px;
     width: 600px; height: 600px; border-radius: 50%;
@@ -68,100 +76,109 @@
   }
   .big-idea {
     font-family: 'Outfit', sans-serif;
-    font-size: 13px; font-weight: 400;
-    color: var(--text2); margin-bottom: 20px;
-    letter-spacing: 0.01em;
+    font-size: 15px; font-weight: 400; color: var(--text2);
+    margin-bottom: 20px; letter-spacing: 0.01em;
   }
   .big-idea strong { color: var(--accent); font-weight: 500; }
   .hero h1 {
-    font-size: clamp(32px, 5.5vw, 52px);
+    font-size: clamp(34px, 6vw, 54px);
     font-weight: 300; color: #fff;
-    margin-bottom: 20px;
-    max-width: 640px;
+    margin-bottom: 22px; max-width: 660px;
   }
   .hero h1 strong { font-weight: 600; }
   .hero-sub {
-    font-size: clamp(16px, 2vw, 18px);
+    font-size: clamp(17px, 2.2vw, 19px);
     color: var(--text2); font-weight: 300;
-    line-height: 1.75; margin-bottom: 40px;
-    max-width: 580px;
+    line-height: 1.8; margin-bottom: 40px; max-width: 600px;
   }
   .hero-sub strong { color: var(--text); font-weight: 400; }
 
-  /* ── CTA Button ── */
+  /* CTA */
   .btn-cta {
     display: inline-flex; align-items: center; gap: 12px;
     font-family: 'Outfit', sans-serif;
-    font-size: 15px; font-weight: 500;
+    font-size: 16px; font-weight: 500;
     background: var(--accent); color: #fff;
     padding: 18px 36px; border-radius: var(--radius);
     text-decoration: none; border: none; cursor: pointer;
     transition: background 0.2s, transform 0.15s;
   }
   .btn-cta:hover { background: var(--accent2); transform: translateY(-2px); }
-  .btn-cta svg { width: 20px; height: 20px; flex-shrink: 0; }
-  .btn-hint {
-    font-size: 12px; color: var(--text3);
-    margin-top: 12px; display: block;
-  }
+  .btn-cta svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .btn-hint { font-size: 13px; color: var(--text3); margin-top: 12px; display: block; }
 
-  /* ── Divider ── */
-  .divider { height: 1px; background: var(--border); margin: 0; }
-
-  /* ── Pilares ── */
-  .pilares { padding: 72px 0; }
-  .section-label {
-    font-family: 'Outfit', sans-serif;
-    font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 14px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .section-label::before { content: ''; width: 22px; height: 1px; background: var(--accent); }
-  .pilares h2 {
+  /* ── Bloco comportamental ── */
+  .behav { padding: 72px 0; background: var(--bg2); }
+  .behav h2 {
     font-size: clamp(22px, 3.5vw, 32px);
-    font-weight: 300; color: #fff; margin-bottom: 40px;
+    font-weight: 300; color: #fff; margin-bottom: 24px;
   }
-  .pilares h2 strong { font-weight: 600; }
-  .pilares-list { display: flex; flex-direction: column; gap: 0; }
-  .pilar {
-    display: flex; gap: 24px; align-items: flex-start;
-    padding: 28px 0; border-bottom: 1px solid var(--border);
+  .behav h2 strong { font-weight: 600; }
+  .behav-box {
+    background: var(--bg3);
+    border: 1px solid var(--border-accent);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: 28px 30px;
   }
-  .pilar:last-child { border-bottom: none; }
-  .pilar-num {
-    font-family: 'Outfit', sans-serif;
-    font-size: 28px; font-weight: 300;
-    color: rgba(223,100,23,0.2);
-    line-height: 1; min-width: 36px; margin-top: 2px;
+  .behav-box p {
+    font-size: 17px; color: var(--text2); line-height: 1.85;
+    font-weight: 300;
   }
-  .pilar-body h3 {
-    font-size: 17px; font-weight: 500; color: #fff; margin-bottom: 4px;
-  }
-  .pilar-body p { font-size: 15px; color: var(--text2); line-height: 1.65; font-weight: 300; }
+  .behav-box strong { color: var(--text); font-weight: 400; }
 
   /* ── O que vai aprender ── */
-  .aprender { padding: 72px 0; background: var(--bg2); }
+  .aprender { padding: 72px 0; }
   .aprender h2 {
     font-size: clamp(22px, 3.5vw, 32px);
     font-weight: 300; color: #fff; margin-bottom: 36px;
   }
   .aprender h2 strong { font-weight: 600; }
-  .topicos { display: flex; flex-direction: column; gap: 0; }
+  .topicos { display: flex; flex-direction: column; }
   .topico {
     display: flex; gap: 20px; align-items: flex-start;
-    padding: 22px 0; border-bottom: 1px solid var(--border);
+    padding: 24px 0; border-bottom: 1px solid var(--border);
   }
   .topico:last-child { border-bottom: none; }
   .topico-icon {
-    width: 28px; height: 28px; min-width: 28px;
-    border: 1px solid var(--border-accent);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 2px;
+    width: 30px; height: 30px; min-width: 30px;
+    border: 1px solid var(--border-accent); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin-top: 2px;
   }
-  .topico-icon svg { width: 12px; height: 12px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .topico p { font-size: 16px; color: var(--text2); line-height: 1.65; font-weight: 300; }
+  .topico-icon svg { width: 13px; height: 13px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .topico p { font-size: 17px; color: var(--text2); line-height: 1.7; font-weight: 300; }
   .topico strong { color: var(--text); font-weight: 400; }
+
+  /* ── Pilares grid ── */
+  .pilares { padding: 72px 0; background: var(--bg2); }
+  .pilares h2 {
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 300; color: #fff; margin-bottom: 36px;
+  }
+  .pilares h2 strong { font-weight: 600; }
+  .pilares-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .pilar-card {
+    background: var(--bg2); padding: 32px 28px;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .pilar-card:hover { background: var(--bg3); }
+  .pilar-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px; background: var(--accent); opacity: 0.4;
+  }
+  .pilar-card-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px; font-weight: 300;
+    color: rgba(223,100,23,0.55); line-height: 1; margin-bottom: 14px;
+  }
+  .pilar-card h3 { font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 8px; }
+  .pilar-card p { font-size: 15px; color: var(--text2); line-height: 1.7; font-weight: 300; }
 
   /* ── Para quem é ── */
   .para-quem { padding: 72px 0; }
@@ -170,88 +187,55 @@
     font-weight: 300; color: #fff; margin-bottom: 36px;
   }
   .para-quem h2 strong { font-weight: 600; }
-  .checks { display: flex; flex-direction: column; gap: 14px; }
+  .checks { display: flex; flex-direction: column; gap: 16px; }
   .check-item {
-    display: flex; gap: 14px; align-items: flex-start;
-    font-size: 16px; color: var(--text2); font-weight: 300; line-height: 1.6;
+    display: flex; gap: 16px; align-items: flex-start;
+    font-size: 17px; color: var(--text2); font-weight: 300; line-height: 1.65;
   }
   .check-dot {
-    width: 20px; height: 20px; min-width: 20px;
-    background: rgba(223,100,23,0.12);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 3px;
+    width: 22px; height: 22px; min-width: 22px;
+    background: rgba(223,100,23,0.12); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin-top: 3px;
   }
-  .check-dot svg { width: 9px; height: 9px; stroke: var(--accent); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .check-dot svg { width: 10px; height: 10px; stroke: var(--accent); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
   .check-item strong { color: var(--text); font-weight: 400; }
 
-  /* ── CTA final ── */
-  .cta-final {
-    padding: 72px 0 80px;
-    background: var(--bg2);
-    position: relative; overflow: hidden;
+  /* ── Bio ── */
+  .bio-mini { padding: 72px 0; background: var(--bg2); }
+  .bio-mini-inner { display: flex; gap: 24px; align-items: flex-start; }
+  .bio-mini-avatar {
+    width: 72px; height: 72px; min-width: 72px;
+    border-radius: 50%; background: var(--bg3);
+    border: 2px solid var(--border-accent);
+    overflow: hidden;
   }
+  .bio-mini-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .bio-mini-nome { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 2px; }
+  .bio-mini-cargo { font-size: 12px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; font-family: 'Outfit', sans-serif; }
+  .bio-mini-text { font-size: 16px; color: var(--text2); line-height: 1.8; font-weight: 300; }
+  .bio-mini-text p { margin-bottom: 14px; }
+  .bio-mini-text p:last-child { margin-bottom: 0; }
+
+  /* ── CTA final ── */
+  .cta-final { padding: 72px 0 80px; position: relative; overflow: hidden; }
   .cta-final-bg {
     position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
     width: 600px; height: 400px;
     background: radial-gradient(ellipse, rgba(10,56,113,0.25) 0%, transparent 65%);
     pointer-events: none;
   }
-  .cta-final h2 {
-    font-size: clamp(24px, 4vw, 38px);
-    font-weight: 300; color: #fff;
-    margin-bottom: 14px;
-  }
+  .cta-final h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 300; color: #fff; margin-bottom: 14px; }
   .cta-final h2 strong { font-weight: 600; }
-  .cta-final p {
-    font-size: 16px; color: var(--text2); font-weight: 300;
-    line-height: 1.75; margin-bottom: 36px; max-width: 520px;
-  }
-  .cta-aviso {
-    font-size: 13px; color: var(--text3);
-    margin-top: 14px; display: block;
-    line-height: 1.6;
-  }
-
-  /* ── Bio mini ── */
-  .bio-mini { padding: 56px 0; border-top: 1px solid var(--border); }
-  .bio-mini-inner { display: flex; gap: 20px; align-items: flex-start; }
-  .bio-mini-avatar {
-    width: 52px; height: 52px; min-width: 52px;
-    border-radius: 50%;
-    background: var(--bg3);
-    border: 1px solid var(--border-accent);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px; font-weight: 500; color: var(--accent);
-    overflow: hidden;
-  }
-  .bio-mini-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-  .bio-mini-nome {
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 2px;
-  }
-  .bio-mini-cargo { font-size: 12px; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; font-family: 'Outfit', sans-serif; }
-  .bio-mini-text { font-size: 14px; color: var(--text2); line-height: 1.7; font-weight: 300; }
+  .cta-final p { font-size: 17px; color: var(--text2); font-weight: 300; line-height: 1.8; margin-bottom: 36px; max-width: 520px; }
 
   /* ── Footer ── */
-  footer {
-    padding: 32px 0;
-    border-top: 1px solid var(--border);
-  }
-  .footer-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 12px;
-  }
-  .footer-logo {
-    font-family: 'Outfit', sans-serif;
-    font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--text2);
-  }
+  footer { padding: 32px 0; border-top: 1px solid var(--border); }
+  .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text2); }
   .footer-logo span { color: var(--accent); }
   .footer-copy { font-size: 12px; color: var(--text3); }
 
-  /* ── Animations ── */
+  /* animations */
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
@@ -260,15 +244,24 @@
 
   /* ── Mobile ── */
   @media (max-width: 600px) {
+    body { font-size: 18px; }
     .hero { padding: 60px 0 48px; }
-    .pilares, .aprender, .para-quem, .cta-final { padding: 56px 0; }
-    .btn-cta { width: 100%; justify-content: center; }
+    .behav, .aprender, .pilares, .para-quem, .bio-mini, .cta-final { padding: 56px 0; }
+    .btn-cta { width: 100%; justify-content: center; font-size: 17px; padding: 18px 24px; }
+    .pilares-grid { grid-template-columns: 1fr; }
+    .pilar-card { padding: 28px 22px; }
+    .topico p { font-size: 17px; }
+    .check-item { font-size: 17px; }
+    .bio-mini-inner { flex-direction: column; }
+    .hero h1 { font-size: clamp(32px, 8vw, 48px); }
+    .behav-box p { font-size: 17px; }
+    .bio-mini-text { font-size: 16px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ── Hero ── -->
+<!-- Hero -->
 <section class="hero">
   <div class="hero-bg-glow"></div>
   <div class="hero-bg-glow2"></div>
@@ -291,47 +284,20 @@
 
 <div class="divider"></div>
 
-<!-- ── Pilares ── -->
-<section class="pilares">
+<!-- Perspectiva comportamental -->
+<section class="behav">
   <div class="container">
-    <p class="section-label reveal">O método em 4 fases</p>
-    <h2 class="reveal reveal-delay-1">O sistema completo que você vai <strong>conhecer na aula</strong></h2>
-    <div class="pilares-list reveal reveal-delay-2">
-      <div class="pilar">
-        <div class="pilar-num">01</div>
-        <div class="pilar-body">
-          <h3>Organização Financeira</h3>
-          <p>Saber exatamente para onde vai cada real — com um sistema que funciona de forma automática, sem depender de anotação manual ou força de vontade.</p>
-        </div>
-      </div>
-      <div class="pilar">
-        <div class="pilar-num">02</div>
-        <div class="pilar-body">
-          <h3>Gestão de Riscos</h3>
-          <p>Reserva de emergência estruturada, proteção de renda e blindagem do patrimônio familiar — para que um imprevisto não desfaça o que você levou anos para construir.</p>
-        </div>
-      </div>
-      <div class="pilar">
-        <div class="pilar-num">03</div>
-        <div class="pilar-body">
-          <h3>Investimentos Estratégicos</h3>
-          <p>Estratégia de investimentos no Brasil e nos EUA alinhada aos seus objetivos reais — com acúmulo de pontos e milhas como alavanca paralela.</p>
-        </div>
-      </div>
-      <div class="pilar">
-        <div class="pilar-num">04</div>
-        <div class="pilar-body">
-          <h3>Expansão Patrimonial</h3>
-          <p>Diversificação inteligente, aquisição de imóveis com estratégia e aceleração do patrimônio — construindo legado, não apenas saldo.</p>
-        </div>
-      </div>
+    <p class="section-label reveal">Perspectiva comportamental</p>
+    <h2 class="reveal reveal-delay-1">Por que quem ganha bem <strong>ainda assim não acumula?</strong></h2>
+    <div class="behav-box reveal reveal-delay-2">
+      <p>Renda alta não é sinônimo de liberdade financeira — e você provavelmente já sente isso. Com filhos, patrimônio crescendo e responsabilidade de longo prazo, as decisões financeiras ficam mais complexas e mais custosas quando adiadas. A neurociência chama isso de <strong>viés do presente</strong>: nosso cérebro está programado para adiar decisões financeiras importantes em favor do imediato. Não é fraqueza. É biologia.<br><br>O que muda isso não é força de vontade. É um sistema que toma as decisões certas por você, automaticamente.</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ── O que vai aprender ── -->
+<!-- O que vai aprender -->
 <section class="aprender">
   <div class="container">
     <p class="section-label reveal">Na aula ao vivo</p>
@@ -355,7 +321,7 @@
       </div>
       <div class="topico">
         <div class="topico-icon"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
-        <p>Como montar um <strong>plano financeiro em 4 etapas</strong> que protege sua família hoje e constrói patrimônio real para os próximos 10 anos</p>
+        <p>Como montar um <strong>plano financeiro em 4 etapas</strong> que protege sua família hoje e constrói patrimônio real para os próximos anos</p>
       </div>
     </div>
   </div>
@@ -363,7 +329,39 @@
 
 <div class="divider"></div>
 
-<!-- ── Para quem é ── -->
+<!-- Pilares grid 2x2 -->
+<section class="pilares">
+  <div class="container">
+    <p class="section-label reveal">O método em 4 fases</p>
+    <h2 class="reveal reveal-delay-1">O sistema completo que você vai <strong>conhecer na aula</strong></h2>
+    <div class="pilares-grid reveal reveal-delay-2">
+      <div class="pilar-card">
+        <div class="pilar-card-num">01</div>
+        <h3>Organização Financeira</h3>
+        <p>Saber exatamente para onde vai cada real — com um sistema automático, sem depender de anotação manual ou força de vontade.</p>
+      </div>
+      <div class="pilar-card">
+        <div class="pilar-card-num">02</div>
+        <h3>Gestão de Riscos</h3>
+        <p>Reserva de emergência, proteção de renda e blindagem patrimonial — para que um imprevisto não desfaça o que você levou anos para construir.</p>
+      </div>
+      <div class="pilar-card">
+        <div class="pilar-card-num">03</div>
+        <h3>Investimentos Estratégicos</h3>
+        <p>Estratégia de investimentos no Brasil e nos EUA alinhada aos seus objetivos — com acúmulo de pontos e milhas como alavanca paralela.</p>
+      </div>
+      <div class="pilar-card">
+        <div class="pilar-card-num">04</div>
+        <h3>Expansão Patrimonial</h3>
+        <p>Diversificação inteligente, aquisição de imóveis com estratégia e aceleração do patrimônio — construindo legado, não apenas saldo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Para quem é -->
 <section class="para-quem">
   <div class="container">
     <p class="section-label reveal">Essa aula é para você?</p>
@@ -391,17 +389,22 @@
 
 <div class="divider"></div>
 
-<!-- ── Bio mini ── -->
+<!-- Bio -->
 <section class="bio-mini">
   <div class="container">
-    <div class="bio-mini-inner reveal">
+    <p class="section-label reveal">Quem vai te ajudar</p>
+    <div class="bio-mini-inner reveal reveal-delay-1">
       <div class="bio-mini-avatar">
         <img src="foto.jpg" alt="Rafael Garbelini">
       </div>
       <div>
         <p class="bio-mini-nome">Rafael Garbelini</p>
         <p class="bio-mini-cargo">Consultor Financeiro · MDRT Member</p>
-        <p class="bio-mini-text">Há 6 anos trabalho com famílias de alta renda que ganham bem mas não têm clareza de para onde o dinheiro vai — ou como fazê-lo crescer de forma estruturada. Minha abordagem une finanças comportamentais com planejamento estratégico personalizado.</p>
+        <div class="bio-mini-text">
+          <p>Desde 2019 trabalho exclusivamente com famílias de alta renda que ganham bem — mas não têm clareza para onde o dinheiro vai ou como fazê-lo crescer de forma estruturada.</p>
+          <p>Minha abordagem une finanças comportamentais com planejamento financeiro estratégico. Trabalho com a pessoa por trás dos números — entendendo os hábitos, os gatilhos e o momento de vida da sua família.</p>
+          <p>Sou esposo, pai de duas meninas, e encontrei na consultoria financeira não apenas uma profissão — mas uma missão de vida. Hoje, guio centenas de famílias que confiam à minha estratégia mais de R$ 100 milhões em patrimônio. Mas, para além dos números, meu compromisso é garantir a estrutura necessária para que cada projeto de vida se torne um legado seguro. Afinal, a verdadeira riqueza é a tranquilidade que você constrói para quem ama.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -409,7 +412,7 @@
 
 <div class="divider"></div>
 
-<!-- ── CTA Final ── -->
+<!-- CTA Final -->
 <section class="cta-final">
   <div class="cta-final-bg"></div>
   <div class="container">
@@ -426,7 +429,7 @@
   </div>
 </section>
 
-<!-- ── Footer ── -->
+<!-- Footer -->
 <footer>
   <div class="container">
     <div class="footer-inner">
