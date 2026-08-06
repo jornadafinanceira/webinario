@@ -1,2 +1,2 @@
-# webnario
+#webinario
 Webnario-jornada-financeira
