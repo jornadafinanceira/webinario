@@ -1,337 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Aula gratuita e ao vivo: o sistema que profissionais de alta renda usam para transformar o que ganham em patrimônio real para a família.">
-<title>Aula Gratuita · Rafael Garbelini</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aula gratuita | Rafael Garbelini</title>
+<meta name="description" content="Ganhar bem é uma coisa. Construir patrimônio é outra. Aula gratuita e ao vivo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg:      #04141f;
-    --bg2:     #071e2e;
-    --bg3:     #0a2235;
-    --accent:  #df6417;
-    --accent2: #f07a30;
-    --text:    #e8e4dc;
-    --text2:   #9fa8a3;
-    --text3:   #6b7470;
-    --border:  rgba(255,255,255,0.07);
-    --border-accent: rgba(223,100,23,0.3);
-    --radius:  4px;
-    --radius-lg: 8px;
-  }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 18px;
-    line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  h1,h2,h3 { font-family: 'Outfit', sans-serif; font-weight: 500; line-height: 1.25; letter-spacing: -0.02em; }
-  ::selection { background: var(--accent); color: #fff; }
-  .container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
-
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 28px;
-  }
-  .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
-
-  .section-label {
-    font-family: 'Outfit', sans-serif;
-    font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 14px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .section-label::before { content: ''; width: 22px; height: 1px; background: var(--accent); }
-
-  .divider { height: 1px; background: var(--border); }
-
-  /* ── Hero ── */
-  .hero {
-    padding: 88px 0 72px;
-    position: relative; overflow: hidden;
-  }
-  .hero-bg-glow {
-    position: absolute; top: -100px; right: -200px;
-    width: 600px; height: 600px; border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(10,56,113,0.3) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .hero-bg-glow2 {
-    position: absolute; bottom: -80px; left: -150px;
-    width: 400px; height: 400px; border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(223,100,23,0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero h1 {
-    font-size: clamp(34px, 6vw, 56px);
-    font-weight: 300; color: #fff;
-    margin-bottom: 22px; max-width: 660px;
-  }
-  .hero h1 strong { font-weight: 600; }
-  .hero-sub {
-    font-size: clamp(17px, 2.2vw, 20px);
-    color: var(--text2); font-weight: 300;
-    line-height: 1.8; margin-bottom: 16px; max-width: 620px;
-  }
-  .hero-sub strong { color: var(--text); font-weight: 400; }
-  .hero-familia {
-    font-size: clamp(16px, 2vw, 18px);
-    color: var(--accent2); font-weight: 300;
-    line-height: 1.7; margin-bottom: 40px; max-width: 600px;
-    font-style: italic;
-  }
-
-  .btn-cta {
-    display: inline-flex; align-items: center; gap: 12px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px; font-weight: 500;
-    background: var(--accent); color: #fff;
-    padding: 18px 36px; border-radius: var(--radius);
-    text-decoration: none; border: none; cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-cta:hover { background: var(--accent2); transform: translateY(-2px); }
-  .btn-cta svg { width: 22px; height: 22px; flex-shrink: 0; }
-  .btn-hint { font-size: 13px; color: var(--text3); margin-top: 12px; display: block; }
-
-  /* ── O que vai ver ── */
-  .aprender { padding: 80px 0; background: var(--bg2); }
-  .aprender h2 {
-    font-size: clamp(24px, 3.5vw, 34px);
-    font-weight: 300; color: #fff; margin-bottom: 36px;
-  }
-  .aprender h2 strong { font-weight: 600; }
-  .topicos { display: flex; flex-direction: column; }
-  .topico {
-    display: flex; gap: 20px; align-items: flex-start;
-    padding: 24px 0; border-bottom: 1px solid var(--border);
-  }
-  .topico:last-child { border-bottom: none; }
-  .topico-icon {
-    width: 30px; height: 30px; min-width: 30px;
-    border: 1px solid var(--border-accent); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; margin-top: 3px;
-  }
-  .topico-icon svg { width: 13px; height: 13px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .topico p { font-size: 17px; color: var(--text2); line-height: 1.7; font-weight: 300; }
-  .topico strong { color: var(--text); font-weight: 400; }
-
-  /* ── CTA final + bio ── */
-  .cta-bio {
-    padding: 80px 0 88px;
-    position: relative; overflow: hidden;
-  }
-  .cta-bio-bg {
-    position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
-    width: 600px; height: 400px;
-    background: radial-gradient(ellipse, rgba(10,56,113,0.2) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .cta-bio h2 {
-    font-size: clamp(26px, 4vw, 42px);
-    font-weight: 300; color: #fff; margin-bottom: 14px;
-  }
-  .cta-bio h2 strong { font-weight: 600; }
-  .cta-bio-sub {
-    font-size: 17px; color: var(--text2); font-weight: 300;
-    line-height: 1.8; margin-bottom: 36px; max-width: 540px;
-  }
-  .bio-strip {
-    display: flex; gap: 20px; align-items: center;
-    margin-top: 52px; padding-top: 40px;
-    border-top: 1px solid var(--border);
-  }
-  .bio-strip-avatar {
-  width: 120px; height: 120px; min-width: 120px;
-  border-radius: 8px; overflow: hidden;
-  border: 2px solid var(--border-accent);
-}
-  .bio-strip-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-  .bio-strip-nome {
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px; font-weight: 500; color: #fff; margin-bottom: 2px;
-  }
-  .bio-strip-cargo {
-    font-size: 12px; color: var(--accent);
-    letter-spacing: 0.06em; text-transform: uppercase;
-    font-family: 'Outfit', sans-serif; margin-bottom: 6px;
-  }
-  .bio-strip-text {
-    font-size: 15px; color: var(--text2); line-height: 1.7; font-weight: 300;
-  }
-
-  /* ── Footer ── */
-  footer { padding: 28px 0; border-top: 1px solid var(--border); }
-  .footer-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 12px;
-  }
-  .footer-logo {
-    font-family: 'Outfit', sans-serif;
-    font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text2);
-  }
-  .footer-logo span { color: var(--accent); }
-  .footer-copy { font-size: 12px; color: var(--text3); }
-
-  /* animations */
-  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-
-  /* Mobile */
-  @media (max-width: 600px) {
-    .hero { padding: 64px 0 52px; }
-    .aprender, .cta-bio { padding: 60px 0; }
-    .btn-cta { width: 100%; justify-content: center; font-size: 17px; }
-    .bio-strip { flex-direction: column; align-items: flex-start; }
-    .hero h1 { font-size: clamp(32px, 8vw, 44px); }
-  }
+body{margin:0;background:#04141f;color:#f2f5f8;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#df6417}a:hover{color:#f07a30}
+*{box-sizing:border-box}
+.btn{transition:background .2s}.btn:hover{background:#f07a30!important;color:#fff!important}
 </style>
- <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1108143654965032');
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1108143654965032&ev=PageView&noscript=1"/>
-</noscript>
 </head>
 <body>
+<main style="background:#04141f;color:#f2f5f8;min-height:100vh">
 
-<!-- ── Seção 1: Hero ── -->
-<section class="hero">
-  <div class="hero-bg-glow"></div>
-  <div class="hero-bg-glow2"></div>
-  <div class="container">
-    <p class="eyebrow reveal">Aula gratuita e ao vivo</p>
-    <h1 class="reveal reveal-delay-1"><strong>Ganhar bem é uma coisa. Construir patrimônio é outra.</strong> 
-    Descubra como transformar a renda que você já tem em patrimônio de verdade para sua família.</h1>
-    <p class="hero-sub reveal reveal-delay-2">
-      Nesta aula, você vai descobrir por que profissionais de alta renda <strong>podem ganhar cada vez mais e, ainda assim, sentir que deveriam estar melhor</strong> — e conhecer o sistema de 4 pilares para transformar renda em patrimônio.
-    <p class="hero-familia reveal reveal-delay-2">
-      Você é casado, tem filhos e sabe que construir patrimônio não é apenas sobre dinheiro. É sobre segurança, liberdade e futuro para sua família.
-    </p>
-    <div class="reveal reveal-delay-3">
-      <a href="https://chat.whatsapp.com/HPCGpf8avc9Ceby2GFTLFj?s=cl&amp;p=i&amp;ilr=4" target="_blank" rel="noopener" onclick="fbq('track', 'Lead')" class="btn-cta">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Quero participar gratuitamente
-      </a>
-      <span class="btn-hint">Grupo silencioso · sem spam · você recebe só o link da aula</span>
+<section data-screen-label="Hero" style="max-width:880px;margin:0 auto;padding:clamp(56px,10vw,120px) 24px clamp(48px,8vw,96px);display:flex;flex-direction:column;gap:32px;align-items:flex-start">
+  <div style="display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#df6417;font-weight:600">
+    <span style="width:8px;height:8px;border-radius:50%;background:#df6417"></span>Aula gratuita e ao vivo
+  </div>
+  <h1 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(38px,6.4vw,68px);line-height:1.04;letter-spacing:-.02em;text-wrap:balance">
+    <strong style="font-weight:500">Ganhar bem é uma coisa. Construir patrimônio é outra.</strong>
+    <span style="display:block;margin-top:20px;font-size:clamp(20px,2.6vw,28px);line-height:1.3;font-style:italic;color:#c3cedb;letter-spacing:0">Descubra como transformar a renda que você já tem em patrimônio de verdade para sua família.</span>
+  </h1>
+  <p style="margin:0;font-size:18px;line-height:1.65;max-width:640px;color:#c3cedb;text-wrap:pretty">Nesta aula, você vai descobrir por que profissionais de alta renda <strong style="color:#f2f5f8;font-weight:600">podem ganhar cada vez mais e, ainda assim, sentir que deveriam estar melhor</strong>, e conhecer o sistema de 4 pilares para transformar renda em patrimônio.</p>
+  <p style="margin:0;font-size:15px;font-weight:600;color:#f2f5f8">Para casais com renda acima de R$ 15 mil por mês.</p>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin-top:8px">
+    <a href="https://chat.whatsapp.com/HPCGpf8avc9Ceby2GFTLFj?s=cl&amp;p=i&amp;ilr=4" style="display:inline-flex;align-items:center;gap:12px;background:#df6417;color:#ffffff;text-decoration:none;font-weight:700;font-size:17px;padding:20px 32px;border-radius:6px" class="btn">Quero participar gratuitamente <span>→</span></a>
+    <span style="font-size:13px;color:#c3cedb">Grupo silencioso · sem spam · você recebe só o link da aula</span>
+  </div>
+</section>
+
+<section data-screen-label="Dores" style="border-top:1px solid #163a5c;background:#0a3871">
+  <div style="max-width:880px;margin:0 auto;padding:clamp(56px,9vw,104px) 24px;display:flex;flex-direction:column;gap:24px">
+    <p style="margin:0;font-family:Newsreader,Georgia,serif;font-size:clamp(26px,3.6vw,38px);line-height:1.25;text-wrap:balance">Eu sei que você sente que sua vida financeira deveria estar muito mais organizada do que está hoje.</p>
+    <p style="margin:0;font-size:18px;color:#c3cedb">Você já se pegou pensando isso?</p>
+    <img src="https://rafaelgarbelini.com.br/webinario/Dores.jpg" alt="Dores financeiras do avatar" style="width:100%;height:auto;display:block;border-radius:6px;margin-top:8px;border:1px solid #163a5c">
+  </div>
+</section>
+
+<section data-screen-label="Conteudo" style="border-top:1px solid #163a5c">
+  <div style="max-width:880px;margin:0 auto;padding:clamp(56px,9vw,104px) 24px;display:flex;flex-direction:column;gap:40px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#df6417;font-weight:600">Na aula ao vivo</span>
+      <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(32px,4.6vw,48px);line-height:1.1">O que você vai ver <em style="color:#df6417">na prática</em></h2>
+    </div>
+    <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+      <li style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:28px 0;border-top:1px solid #163a5c"><span style="font-family:Newsreader,serif;font-size:28px;color:#df6417">01</span><p style="margin:0;font-size:18px;line-height:1.6;color:#c3cedb;text-wrap:pretty">Por que <strong style="color:#f2f5f8">ganhar mais não significa acumular mais</strong></p></li>
+      <li style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:28px 0;border-top:1px solid #163a5c"><span style="font-family:Newsreader,serif;font-size:28px;color:#df6417">02</span><p style="margin:0;font-size:18px;line-height:1.6;color:#c3cedb;text-wrap:pretty">Os <strong style="color:#f2f5f8">vazamentos invisíveis</strong> do seu fluxo de caixa</p></li>
+      <li style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:28px 0;border-top:1px solid #163a5c"><span style="font-family:Newsreader,serif;font-size:28px;color:#df6417">03</span><p style="margin:0;font-size:18px;line-height:1.6;color:#c3cedb;text-wrap:pretty">O método de <strong style="color:#f2f5f8">investir antes de gastar</strong>, no automático</p></li>
+      <li style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:28px 0;border-top:1px solid #163a5c;border-bottom:1px solid #163a5c"><span style="font-family:Newsreader,serif;font-size:28px;color:#df6417">04</span><p style="margin:0;font-size:18px;line-height:1.6;color:#c3cedb;text-wrap:pretty">O <strong style="color:#f2f5f8">plano em 4 etapas</strong> para proteger sua família e construir patrimônio</p></li>
+    </ol>
+  </div>
+</section>
+
+<section data-screen-label="CTA final" style="border-top:1px solid #163a5c;background:#0a3871">
+  <div style="max-width:880px;margin:0 auto;padding:clamp(56px,9vw,104px) 24px;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
+    <h2 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(32px,4.6vw,48px);line-height:1.12;text-wrap:balance">Aula gratuita e ao vivo. <strong style="font-weight:500;color:#df6417">Vagas limitadas.</strong></h2>
+    <a href="https://chat.whatsapp.com/HPCGpf8avc9Ceby2GFTLFj?s=cl&amp;p=i&amp;ilr=4" style="display:inline-flex;align-items:center;gap:12px;background:#df6417;color:#ffffff;text-decoration:none;font-weight:700;font-size:17px;padding:20px 32px;border-radius:6px;margin-top:8px" class="btn">Entrar no grupo e garantir minha vaga <span>→</span></a>
+    <span style="font-size:13px;color:#c3cedb">Grupo silencioso · sem spam · para renda acima de R$ 15 mil/mês</span>
+  </div>
+</section>
+
+<section data-screen-label="Sobre" style="border-top:1px solid #163a5c">
+  <div style="max-width:880px;margin:0 auto;padding:clamp(56px,9vw,104px) 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;align-items:center">
+    <img src="https://rafaelgarbelini.com.br/webinario/foto.jpg" alt="Rafael Garbelini" style="width:100%;max-width:320px;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:6px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <h3 style="margin:0;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:36px">Rafael Garbelini</h3>
+      <span style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#df6417;font-weight:600">Estrategista Financeiro · MDRT Member</span>
+      <p style="margin:8px 0 0;font-size:17px;line-height:1.7;color:#c3cedb;text-wrap:pretty">Desde 2019, mais de R$ 100 milhões em patrimônio guiado para famílias de alta renda.</p>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<section style="padding: 64px 0; background: var(--bg2);">
-  <div class="container">
-<p style="font-family: 'Outfit', sans-serif; font-size: clamp(24px, 4vw, 36px); font-weight: 300; color: #fff; line-height: 1.4; margin-bottom: 12px;">Eu sei que você sente que sua vida financeira deveria estar muito mais organizada do que está hoje.</p>
-<p style="font-family: 'Outfit', sans-serif; font-size: clamp(22px, 3.5vw, 32px); font-weight: 300; color: var(--text2); line-height: 1.5; margin-bottom: 32px;">Por isso, volta e meia você se pega <strong style="color:#fff; font-weight:600;">pensando</strong> coisas como:</p>
-    <img src="Dores.jpg" alt="Dores financeiras do avatar" style="width:100%; max-width:680px; border-radius:8px; display:block; margin:0 auto;">
-  </div>
-</section>
- 
-<!-- ── Seção 2: O que vai ver ── -->
-<section class="aprender">
-  <div class="container">
-    <p class="section-label reveal">Na aula ao vivo</p>
-    <h2 class="reveal reveal-delay-1">O que você vai ver <strong>na prática</strong></h2>
-    <div class="topicos reveal reveal-delay-2">
-      <div class="topico">
-        <div class="topico-icon"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
-        <p>Por que <strong>quem ganha mais não necessariamente acumula mais</strong> — e o ajuste exato que separa quem constrói patrimônio de quem apenas mantém padrão de vida</p>
-      </div>
-      <div class="topico">
-        <div class="topico-icon"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
-        <p>Como identificar os <strong>vazamentos invisíveis no seu fluxo de caixa</strong> — os gastos que você não vê mas que custam mais do que imagina todo mês</p>
-      </div>
-      <div class="topico">
-        <div class="topico-icon"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
-        <p><strong>Primeiro você, depois o boleto.</strong> Como aplicar o método para investir antes de gastar — e como automatizar isso sem mudar sua rotina</p>
-      </div>
-      <div class="topico">
-        <div class="topico-icon"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
-        <p>Por que <strong>deixar nas mãos do gerente de banco</strong> é o erro mais caro que famílias de alta renda cometem — e o que fazer no lugar</p>
-      </div>
-      <div class="topico">
-        <div class="topico-icon"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
-        <p>Como montar um <strong>plano financeiro em 4 etapas</strong> que protege sua família hoje e constrói patrimônio real para os próximos anos</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ── Seção 3: CTA final + bio ── -->
-<section class="cta-bio">
-  <div class="cta-bio-bg"></div>
-  <div class="container">
-    <p class="section-label reveal">Garanta sua vaga</p>
-    <h2 class="reveal reveal-delay-1">Aula gratuita e ao vivo.<br><strong>Vagas limitadas.</strong></h2>
-    <p class="cta-bio-sub reveal reveal-delay-2">Grupo silencioso — sem spam. Você entra, recebe o link da aula e participa ao vivo. Só entram profissionais com renda acima de R$ 15 mil mensais.</p>
-    <div class="reveal reveal-delay-3">
-      <a href="https://chat.whatsapp.com/HPCGpf8avc9Ceby2GFTLFj?s=cl&amp;p=i&amp;ilr=4" target="_blank" rel="noopener" onclick="fbq('track', 'Lead')" class="btn-cta">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Entrar no grupo e garantir minha vaga
-      </a>
-      <span class="btn-hint">Grupo silencioso · sem spam · só o link da aula</span>
-    </div>
-    <div class="bio-strip reveal reveal-delay-2">
-      <div class="bio-strip-avatar">
-        <img src="foto.jpg" alt="Rafael Garbelini">
-      </div>
-      <div>
-        <p class="bio-strip-nome">Rafael Garbelini</p>
-        <p class="bio-strip-cargo">Consultor Financeiro · MDRT Member</p>
-        <p class="bio-strip-text">Esposo, pai de duas meninas. Desde 2019 trabalho exclusivamente com famílias de alta renda — guiando mais de R$ 100 milhões em patrimônio com uma abordagem que une finanças comportamentais e planejamento estratégico.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Footer ── -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <span class="footer-logo">Rafael <span>Garbelini</span></span>
-      <span class="footer-copy">© 2025 · Todos os direitos reservados</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-  document.querySelectorAll('.hero .reveal').forEach(el => {
-    setTimeout(() => el.classList.add('visible'), 80);
-  });
-</script>
+<footer style="border-top:1px solid #163a5c;padding:32px 24px;text-align:center;font-size:13px;color:#c3cedb">Rafael Garbelini © 2025 · Todos os direitos reservados</footer>
+</main>
 </body>
 </html>
